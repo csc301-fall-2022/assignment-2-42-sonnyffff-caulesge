@@ -13,16 +13,17 @@ from counter import *
 
 
 def print_item():
-    apple = Item("apple", 10.5, "", "", 1)
-    banana = Item("banana", 3.5, "", "", 1)
-    counter = Counter([])
-    counter.add_cart(apple, 3)
-    counter.add_cart(apple, 2)
-    counter.add_cart(banana, 1)
-    counter.remove_cart(banana, 1)
-    counter.remove_cart(apple, 2)
-    counter.print_current_cart()
-
+    apple = Item("apple", 10.5, "", "", 102)
+    banana = Item("banana", 3.5, "", "", 111)
+    counter = Counter([apple, banana])
+    counter.set_tax(0.15)
+    counter.set_discount(0.1) # 10% off
+    counter.add_cart(102, 3)
+    counter.add_cart(102, 2)
+    counter.add_cart(111, 1)
+    counter.remove_cart(102, 2)
+    #counter.print_current_cart()
+    counter.print_invoice()
 
 if __name__ == '__main__':
     print_item()

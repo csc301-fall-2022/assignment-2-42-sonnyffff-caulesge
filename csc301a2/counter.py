@@ -9,6 +9,7 @@ This file is Copyright (c) 2022 Zijia(Sonny) Chen and Hongshou(Caules) Ge
 """
 
 from item import *
+from typing import Any
 
 
 class Counter:
@@ -25,6 +26,7 @@ class Counter:
     _cart: list[Item]
     _taxes: float
     _discounts: float
+    _total: float
 
     def __init__(self, instock: list[Item]) -> None:
         """ Initialize a new counter containing the given root value.
@@ -53,11 +55,26 @@ class Counter:
             print("Invalid number")
             return False
 
-    def add_cart(self, item: Item, quantity: int) -> bool:
-        """ Add certain number of items to the cart by its id number.
+    def search_id(self, itemid: int) -> Any:
+        """ Search for an item in stock with given item id number. Return none if not found.
 
         """
+        for i in self._inStock:
+            # find item in the stock by its number
+            if i.idNum == itemid:
+                return i
+        return None
+
+    def add_cart(self, itemnum: int, quantity: int) -> bool:
+        """ Add certain number of items to the cart by its id number
+
+        """
+        item = self.search_id(itemnum)
+        if item is None:
+            print("Item not found in stock")
+            return False
         if quantity > 0:
+            # check if item is in the cart already
             for i in self._cart:
                 if i.name == item.name:
                     i.set_quantity(i.quantity + quantity)
@@ -68,10 +85,14 @@ class Counter:
         else:
             return False
 
-    def remove_cart(self, item: Item, quantity: int) -> bool:
+    def remove_cart(self, itemnum: int, quantity: int) -> bool:
         """ Remove certain number of items from the cart by its id number.
 
         """
+        item = self.search_id(itemnum)
+        if item is None:
+            print("Item not found in stock")
+            return False
         if quantity > 0:
             for i in self._cart:
                 if i.name == item.name:
@@ -91,10 +112,19 @@ class Counter:
 
         """
         for i in self._cart:
-            print(i.name + " " + str(i.quantity) + " " + str(i.price) + "\n")
+            print("Name: " + i.name + " " + "price: "+ str(i.price) + " " + "quantity: "+ str(i.quantity))
 
     def print_invoice(self):
         """ Remove certain number of items from the cart by its id number.
 
         """
+        total = 0
+        for i in self._cart:
+            print("Name: " + i.name + " " + "price: "+ str(i.price) + " " + "quantity: "+ str(i.quantity))
+            total += i.price * i.quantity
 
+        total = total * (1 + self._taxes) * (1 - self._discounts)
+        print("Tax: " + str(self._taxes))
+        print("Discounts: " + str(self._discounts))
+        total = round(total, 2)
+        print("Total: " + str(total))
