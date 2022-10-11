@@ -1,16 +1,28 @@
-# This is a sample Python script.
+"""CSC301 Fall 2022 Assignment 2, counter
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+This file consists the class definitions of counter
+
+Copyright and Usage Information
+===============================
+
+This file is Copyright (c) 2022 Zijia(Sonny) Chen and Hongshou(Caules) Ge
+"""
+
+from item import *
+from counter import *
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def print_item():
+    apple = Item("apple", 10.5, "", "", 1)
+    banana = Item("banana", 3.5, "", "", 1)
+    counter = Counter([])
+    counter.add_cart(apple, 3)
+    counter.add_cart(apple, 2)
+    counter.add_cart(banana, 1)
+    counter.remove_cart(banana, 1)
+    counter.remove_cart(apple, 2)
+    counter.print_current_cart()
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    print_item()
