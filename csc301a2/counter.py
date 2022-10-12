@@ -39,16 +39,18 @@ class Counter:
 
     def set_tax(self, tax: float) -> bool:
         """ Set tax for the counter
+        EX: tax 0.1 means 10% tax applied
 
         """
         self._taxes = tax
         return True
 
     def set_discount(self, discount: float) -> bool:
-        """ Set discount for the counter
+        """ Set discount for the counter.
+        EX: discount 0.1 means 10% off
 
         """
-        if discount <= 1:
+        if  0 <= discount <= 1:
             self._discounts = discount
             return True
         else:
@@ -83,6 +85,7 @@ class Counter:
             self._cart.append(item)
             return True
         else:
+            print("Negative quantity")
             return False
 
     def remove_cart(self, itemnum: int, quantity: int) -> bool:
@@ -107,6 +110,17 @@ class Counter:
         else:
             return False
 
+    def calculate_total(self) -> float:
+        """ Return the total value for the cart.
+
+        """
+        total = 0
+        for i in self._cart:
+            total += i.price * i.quantity
+        total = total * (1 + self._taxes) * (1 - self._discounts)
+        total = round(total, 2)
+        return total
+
     def print_current_cart(self):
         """ Print out current items in cart.
 
@@ -115,7 +129,7 @@ class Counter:
             print("Name: " + i.name + " " + "price: "+ str(i.price) + " " + "quantity: "+ str(i.quantity))
 
     def print_invoice(self):
-        """ Remove certain number of items from the cart by its id number.
+        """ Check out and print the invoice
 
         """
         total = 0

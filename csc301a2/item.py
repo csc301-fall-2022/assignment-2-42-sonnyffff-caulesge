@@ -21,19 +21,17 @@ class Item:
     #     - _idNum: a number representation of the item.
     #     - _quantity: the amount of the item.
     price: float
-    description: str
     type: str
     idNum: int
     quantity: int
 
-    def __init__(self, name: str, price: float, description: str, typ: str, idnum: int) -> None:
+    def __init__(self, name: str, price: float, typ: str, idnum: int) -> None:
         """ Initialize a new item with the given price, description, type, id, and
         quantity.
 
         """
         self.name = name
         self.price = price
-        self.description = description
         self.type = typ
         self.idNum = idnum
         self.quantity = 1
