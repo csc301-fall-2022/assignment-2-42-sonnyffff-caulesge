@@ -9,19 +9,18 @@ This file is Copyright (c) 2022 Zijia(Sonny) Chen and Hongshou(Caules) Ge
 """
 
 from counter import *
+from readcsv import *
 
 
 def print_item():
-    apple = Item("apple", 10.5, "", 102)
-    banana = Item("banana", 3.5, "", 111)
-    counter = Counter([apple, banana])
+
+    counter = Counter(read_item_list())
+
     counter.set_tax(0.15)
     counter.set_discount(0.1)  # 10% off
-    counter.add_cart(102, 3)
-    counter.add_cart(102, 2)
-    counter.add_cart(111, 1)
-    counter.add_cart(111, 2)
-    counter.remove_cart(102, 2)
+    counter.add_cart(1, 3)
+    counter.add_cart(2, 2)
+    counter.add_cart(3, 2)
     # counter.print_current_cart()
     counter.print_invoice()
 
