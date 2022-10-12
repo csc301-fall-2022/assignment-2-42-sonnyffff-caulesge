@@ -36,6 +36,15 @@ class Item:
         self.idNum = idnum
         self.quantity = 1
 
+    def __str__(self):
+        """ String representation of an item
+
+        e.g. name: apple#1 price: $1 quantity: 3 subtotal: 3
+        """
+        sub = self.quantity * self.price
+        return "name: " + self.name + "#" + str(self.idNum) + " price: $" + str(self.price) + " quantity: " + \
+               str(self.quantity) + " subtotal: " + str(sub)
+
     def set_quantity(self, quan: int) -> bool:
         """ Set quantity for an item.
 

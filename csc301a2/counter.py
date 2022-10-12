@@ -39,18 +39,18 @@ class Counter:
 
     def set_tax(self, tax: float) -> bool:
         """ Set tax for the counter
-        EX: tax 0.1 means 10% tax applied
 
+        e.g. tax 0.1 means 10% tax applied
         """
         self._taxes = tax
         return True
 
     def set_discount(self, discount: float) -> bool:
         """ Set discount for the counter.
-        EX: discount 0.1 means 10% off
 
+        e.g. discount 0.1 means 10% off
         """
-        if  0 <= discount <= 1:
+        if 0 <= discount <= 1:
             self._discounts = discount
             return True
         else:
@@ -110,6 +110,12 @@ class Counter:
         else:
             return False
 
+    def show_cart(self) -> list[Item]:
+        """ Return list of items in the cart.
+
+        """
+        return self._cart
+
     def calculate_total(self) -> float:
         """ Return the total value for the cart.
 
@@ -124,21 +130,20 @@ class Counter:
     def print_current_cart(self):
         """ Print out current items in cart.
 
+        For debugging purpose
         """
         for i in self._cart:
-            print("Name: " + i.name + " " + "price: "+ str(i.price) + " " + "quantity: "+ str(i.quantity))
+            print(i)
 
     def print_invoice(self):
         """ Check out and print the invoice
 
+         For debugging purpose
         """
-        total = 0
         for i in self._cart:
-            print("Name: " + i.name + " " + "price: "+ str(i.price) + " " + "quantity: "+ str(i.quantity))
-            total += i.price * i.quantity
+            print(i)
 
-        total = total * (1 + self._taxes) * (1 - self._discounts)
+        total = self.calculate_total()
         print("Tax: " + str(self._taxes))
         print("Discounts: " + str(self._discounts))
-        total = round(total, 2)
         print("Total: " + str(total))
