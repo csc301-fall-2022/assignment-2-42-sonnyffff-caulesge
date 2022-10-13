@@ -1,9 +1,40 @@
 <h1>Details and Instructions</h1>	
 <h2>Application</h2>
-<h3>Instructions</h3>
+
+<h3>Modules</h3>
+The <code>csc301a2</code> folder contains following modules:<br>
+<strong>Frontend</strong> <strong>TODO Frontend </strong> <br> 
+<strong>Backend</strong><br>
+<code>item.py</code> Class definition of <code>Item</code> that is in store.<br>
+<code>counter.py</code> Class definition of <code>Counter</code> which is responsible for managing 
+items in the shopping cart and checkout. <br>
+<code>read_csv.py</code> Reads a list of available items in csv files into <code>Item</code> objects <br>
+<code>main.py</code> Main function that user needs to run <br>
+<code>test.py</code> Unit tests of main functions of the checkout machine <br> 
+<code>item_list.csv</code> A csv file that contains information of items.<br>
+
+<h3>Description</h3>
+<strong>TODO Frontend </strong> <br> 
+Each <code>Item</code> object has 3 main attributes, which is a unique <em>id number</em>
+associated with the item, the <em>price</em> of the item, and the <em>quantity</em> of that item. <br>
+A <code>Counter</code> object has private attributes <em>instock</em> list that contains all items that
+could be sold. Private attributes <em>cart</em> is a list of items that currently in the shopping 
+cart. Method <code>set_tax</code> and <code>set_discount</code> allows user to set 
+tax and discount for the current bill. <code>add_cart</code> and <code>remove_cart</code>
+allow user to add and remove items by their associated id.  <code>calculate_total</code>
+returns total value for the current cart.<br>
+To sum up, store will prepare a list of items in stock (csv) &rarr; <code>read_csv.py</code> 
+reads csv file into items &rarr; <code>Counter</code> manage items &lrarr; <code>interface.py</code>
+interacts with users and gets commands
+
+
 <h2>Deployment</h2>
-<h2>Testing</h2>
-Include instructions for running unit tests so we can verify your infrastructure is set up properly.
-<h3>Instructions</h3>
-<h2>Work Distribution</h2>
-You've done the work (i.e., it's something on your repo/servers, etc.).
+We uses Heroku to deploy our project.
+
+
+<h2>Testing Instructions</h2>
+<strong>TODO Frontend </strong> <br>
+Requirement: import <code>unittest</code> library for python unit testing.
+In order to check backend functions, simply run <code>test.py</code> which contains 
+unit tests that cover main functions.
+

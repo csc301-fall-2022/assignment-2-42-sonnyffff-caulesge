@@ -26,7 +26,6 @@ class Counter:
     _cart: list[Item]
     _taxes: float
     _discounts: float
-    _total: float
 
     def __init__(self, instock: list[Item]) -> None:
         """ Initialize a new counter containing the given root value.
@@ -115,6 +114,22 @@ class Counter:
 
         """
         return self._cart
+
+    def clear_cart(self) -> bool:
+        """ Remove all items from the cart
+
+        """
+        self._cart = []
+        return True
+
+    def reset_counter(self) -> bool:
+        """ Reset the counter
+
+        """
+        self._cart = []
+        self._taxes = 0
+        self._discounts = 0
+        return True
 
     def calculate_total(self) -> float:
         """ Return the total value for the cart.
