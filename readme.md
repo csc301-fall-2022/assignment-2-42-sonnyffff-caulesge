@@ -34,6 +34,12 @@ We uses Heroku to deploy our project.
 
 <h2>Testing Instructions</h2>
 <strong>TODO Frontend </strong> <br>
+Using instructions:
+  install Flask through terminal： pip install Flask
+  Then, on the pycharm terminal, run with: flask run
+  Open the link generateed in the console
+
+
 Requirement: import <code>unittest</code> library for python unit testing.
 In order to check backend functions, simply run <code>test.py</code> which contains 
 unit tests that cover main functions.
