@@ -43,7 +43,7 @@ class Item:
         """
         sub = self.quantity * self.price
         return "name: " + self.name + "#" + str(self.idNum) + " price: $" + str(self.price) + " quantity: " + \
-               str(self.quantity) + " subtotal: " + str(sub)
+               str(self.quantity) + " subtotal: $" + str(round(sub, 2))
 
     def set_quantity(self, quan: int) -> bool:
         """ Set quantity for an item.

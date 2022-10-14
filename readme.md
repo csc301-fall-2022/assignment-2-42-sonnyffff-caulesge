@@ -39,7 +39,7 @@ Using instructions:
   
   Then, on the pycharm terminal, run with: flask run
   
-  Open the link generateed in the console
+  Open the link generated in the console
 
 
 Requirement: import <code>unittest</code> library for python unit testing.

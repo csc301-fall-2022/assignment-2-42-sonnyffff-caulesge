@@ -9,7 +9,7 @@ counter = Counter(read_item_list())
 
 counter.clear_cart()
 counter.set_discount(0.1)
-
+counter.set_tax(0.15)
 
 @app.route('/', methods=["GET", "POST"])
 def index():
@@ -32,3 +32,5 @@ def index():
                     counter.remove_cart(int(new_item), int(new_num))
 
     return render_template("index.html", cart=counter.show_cart(), invoice=output)
+
+app.run()

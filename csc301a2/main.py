@@ -12,7 +12,7 @@ from counter import *
 from read_csv import *
 
 
-def print_item():
+def run():
 
     counter = Counter(read_item_list())
 
@@ -26,4 +26,4 @@ def print_item():
 
 
 if __name__ == '__main__':
-    print_item()
+    run()
