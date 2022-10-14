@@ -36,7 +36,9 @@ We uses Heroku to deploy our project.
 <strong>TODO Frontend </strong> <br>
 Using instructions:
   install Flask through terminal： pip install Flask
+  
   Then, on the pycharm terminal, run with: flask run
+  
   Open the link generateed in the console
 
 
