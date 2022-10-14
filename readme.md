@@ -3,13 +3,15 @@
 
 <h3>Modules</h3>
 The <code>csc301a2</code> folder contains following modules:<br>
-<strong>Frontend</strong> <strong>TODO Frontend </strong> <br> 
+<strong>Frontend</strong><br> 
+<code>style.css</code> Describes HTML display<br> 
+<code>index.html</code> A webpage for UI<br> 
 <strong>Backend</strong><br>
 <code>item.py</code> Class definition of <code>Item</code> that is in store.<br>
 <code>counter.py</code> Class definition of <code>Counter</code> which is responsible for managing 
 items in the shopping cart and checkout. <br>
 <code>read_csv.py</code> Reads a list of available items in csv files into <code>Item</code> objects <br>
-<code>main.py</code> Main function that user needs to run <br>
+<code>run.py</code> Main function that user needs to run <br>
 <code>test.py</code> Unit tests of main functions of the checkout machine <br> 
 <code>item_list.csv</code> A csv file that contains information of items.<br>
 
@@ -24,8 +26,8 @@ tax and discount for the current bill. <code>add_cart</code> and <code>remove_ca
 allow user to add and remove items by their associated id.  <code>calculate_total</code>
 returns total value for the current cart.<br>
 To sum up, store will prepare a list of items in stock (csv) &rarr; <code>read_csv.py</code> 
-reads csv file into items &rarr; <code>Counter</code> manage items &lrarr; <code>interface.py</code>
-interacts with users and gets commands
+reads csv file into items &rarr; <code>Counter</code> manage items &lrarr; <code>run.py</code>
+&lrarr; <code>index.html</code> interact with users and gets commands
 
 
 <h2>Deployment</h2>
@@ -33,16 +35,11 @@ We uses Heroku to deploy our project.
 
 
 <h2>Testing Instructions</h2>
-<strong>TODO Frontend </strong> <br>
-Using instructions:
-  install Flask through terminal： pip install Flask
-  
-  Then, on the pycharm terminal, run with: flask run
-  
-  Open the link generated in the console
 
-
-Requirement: import <code>unittest</code> library for python unit testing.
+<strong>Requirement</strong>:<br> install <code>unittest</code> library for python unit testing. <br>
+install <code>Flask</code> library for Python database.<br>
+<strong>Instructions:</strong><br>
+To test frontend UI, first, run <code>run.py</code> in Python console. Second, open the generated link in the console with your browser.<br>
 In order to check backend functions, simply run <code>test.py</code> which contains 
 unit tests that cover main functions.
 
