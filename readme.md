@@ -11,7 +11,7 @@ The <code>csc301a2</code> folder contains following modules:<br>
 <code>counter.py</code> Class definition of <code>Counter</code> which is responsible for managing 
 items in the shopping cart and checkout. <br>
 <code>read_csv.py</code> Reads a list of available items in csv files into <code>Item</code> objects <br>
-<code>run.py</code> Main function that user needs to run <br>
+<code>app.py</code> Main function that user needs to run <br>
 <code>test.py</code> Unit tests of main functions of the checkout machine <br> 
 <code>item_list.csv</code> A csv file that contains information of items.<br>
 
