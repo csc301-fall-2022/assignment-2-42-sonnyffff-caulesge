@@ -33,4 +33,6 @@ def index():
 
     return render_template("index.html", cart=counter.show_cart(), invoice=output)
 
-app.run()
+
+if __name__ == '__main__':
+    app.run(debug=True)
