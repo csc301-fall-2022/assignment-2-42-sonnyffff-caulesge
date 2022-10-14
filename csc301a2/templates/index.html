@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css" />
+
+    <title>CSC301 Assignment2</title>
+
+
+</head>
+
+<body>
+    <div id="top">CSC301 Assignment2</div>
+
+    <div id="app">
+    <div class="split left">
+        <form action="/" method="POST">
+            <input type="text" id="item" name="item" placeholder="Enter the item id">
+            <input type="text" id="num" name="num" placeholder="Enter the number"><br>
+            <input id="btn0" type="submit" value="Add" name="Add"><br>
+
+            <input id="btn" type="submit" value="Remove" name="Remove"><br>
+
+            <input id="reset" type="submit" value="Reset" name="Reset"><br>
+                <input id="btn2" type="submit" value="Checkout" name="Checkout"><br>
+        </form>
+
+    </div>
+
+    <div class="split right">
+
+
+
+        <div class="items">
+            <ol>
+                <h3>Stock</h3>
+                <li>Apple</li>
+                <li>Banana</li>
+                <li>Boneless Skinless Chicken Breasts</li>
+                <li>Great Value Orange Juice</li>
+                <li>Blueberry Muffins</li>
+                <li>Great Value White Chocolate</li>
+            </ol>
+
+            <ol>
+                <h3>Cart</h3>
+            {% for x in range(cart | length) %}
+                <li>
+                    {{ cart[x] }}
+                </li>
+                {% endfor%}
+            </ol>
+
+            <ul>
+                <h3>Invoice</h3>
+                {% for x in range(invoice | length) %}
+                <li>
+                    {{ invoice[x] }}
+                </li>
+                {% endfor%}
+            </ul>
+
+        </div>
+    </div>
+
+
+    </div>
+</body>
+</html>
