@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from main import *
+
 from counter import *
 from read_csv import *
 
@@ -8,6 +8,7 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 counter = Counter(read_item_list())
 
 counter.clear_cart()
+counter.set_discount(0.1)
 
 
 @app.route('/', methods=["GET", "POST"])
@@ -29,7 +30,5 @@ def index():
                     counter.add_cart(int(new_item), int(new_num))
                 elif request.form.get('Remove') == 'Remove':
                     counter.remove_cart(int(new_item), int(new_num))
-                elif request.form.get('Discount') == 'Discount':
-                    counter.set_discount(0.1)
 
     return render_template("index.html", cart=counter.show_cart(), invoice=output)
