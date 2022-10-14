@@ -78,3 +78,4 @@ weblib==0.1.30
 Werkzeug==2.2.2
 wrapt==1.12.1
 zipp==3.9.0
+setuptools==57.5.0
