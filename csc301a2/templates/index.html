@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
 
     <title>CSC301 Assignment2</title>
 
@@ -15,7 +15,7 @@
         <form action="/" method="POST">
             <input type="text" id="item" name="item" placeholder="Enter the item id">
             <input type="text" id="num" name="num" placeholder="Enter the number"><br>
-            <input id="btn0" type="submit" value="Add" name="Add"><br>
+            <input id="btn0" type="submit" value="Add" name="Add">
 
             <input id="btn" type="submit" value="Remove" name="Remove"><br>
 
@@ -26,9 +26,6 @@
     </div>
 
     <div class="split right">
-
-
-
         <div class="items">
             <ol>
                 <h3>Stock</h3>
