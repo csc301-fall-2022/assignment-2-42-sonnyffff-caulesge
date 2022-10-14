@@ -1,10 +1,7 @@
 """CSC301 Fall 2022 Assignment 2, counter
-
 This file consists the class definitions of counter.
-
 Copyright and Usage Information
 ===============================
-
 This file is Copyright (c) 2022 Zijia(Sonny) Chen and Hongshou(Caules) Ge
 """
 
@@ -14,7 +11,6 @@ from typing import Any
 
 class Counter:
     """A checkout counter that contains all information of items.
-
     """
 
     # Private Instance Attributes:
@@ -29,7 +25,6 @@ class Counter:
 
     def __init__(self, instock: list[Item]) -> None:
         """ Initialize a new counter containing the given root value.
-
         """
         self._inStock = instock
         self._cart = []
@@ -38,7 +33,6 @@ class Counter:
 
     def set_tax(self, tax: float) -> bool:
         """ Set tax for the counter
-
         e.g. tax 0.1 means 10% tax applied
         """
         self._taxes = tax
@@ -46,7 +40,6 @@ class Counter:
 
     def set_discount(self, discount: float) -> bool:
         """ Set discount for the counter.
-
         e.g. discount 0.1 means 10% off
         """
         if 0 <= discount <= 1:
@@ -58,7 +51,6 @@ class Counter:
 
     def search_id(self, itemid: int) -> Any:
         """ Search for an item in stock with given item id number. Return none if not found.
-
         """
         for i in self._inStock:
             # find item in the stock by its number
@@ -68,7 +60,6 @@ class Counter:
 
     def add_cart(self, itemnum: int, quantity: int) -> bool:
         """ Add certain number of items to the cart by its id number
-
         """
         item = self.search_id(itemnum)
         if item is None:
@@ -89,7 +80,6 @@ class Counter:
 
     def remove_cart(self, itemnum: int, quantity: int) -> bool:
         """ Remove certain number of items from the cart by its id number.
-
         """
         item = self.search_id(itemnum)
         if item is None:
@@ -111,20 +101,22 @@ class Counter:
 
     def show_cart(self) -> list[Item]:
         """ Return list of items in the cart.
-
         """
         return self._cart
 
+    def show_stock(self) -> list[Item]:
+        """ Return list of items in the cart.
+        """
+        return self._inStock
+
     def clear_cart(self) -> bool:
         """ Remove all items from the cart
-
         """
         self._cart = []
         return True
 
     def reset_counter(self) -> bool:
         """ Reset the counter
-
         """
         self._cart = []
         self._taxes = 0
@@ -133,7 +125,6 @@ class Counter:
 
     def calculate_total(self) -> float:
         """ Return the total value for the cart.
-
         """
         total = 0
         for i in self._cart:
@@ -144,21 +135,21 @@ class Counter:
 
     def print_current_cart(self):
         """ Print out current items in cart.
-
         For debugging purpose
         """
         for i in self._cart:
             print(i)
 
-    def print_invoice(self):
+    def print_invoice(self) -> list[Item]:
         """ Check out and print the invoice
-
          For debugging purpose
         """
+        result = []
         for i in self._cart:
-            print(i)
+            result.append(i)
 
         total = self.calculate_total()
-        print("Tax: " + str(self._taxes))
-        print("Discounts: " + str(self._discounts))
-        print("Total: " + str(total))
+        result.append("Tax: " + str(self._taxes))
+        result.append("Discounts: " + str(self._discounts))
+        result.append("Total: " + str(total))
+        return result
