@@ -40,6 +40,7 @@ We uses Heroku to deploy our project.
 install <code>Flask</code> library for Python database.<br>
 <strong>Instructions:</strong><br>
 To test frontend UI, first, run <code>run.py</code> in Python console. Second, open the generated link in the console with your browser.<br>
+Here is a demo video on how to use the program: https://1drv.ms/v/s!Aot4DPCd3yT-dzGF_AOlnbA9pAE?e=RItM5p <br>
 In order to check backend functions, simply run <code>test.py</code> which contains 
 unit tests that cover main functions.
 
