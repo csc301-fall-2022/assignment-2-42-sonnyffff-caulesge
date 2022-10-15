@@ -2,7 +2,6 @@
 <h2>Application</h2>
 
 <h3>Modules</h3>
-The <code>csc301a2</code> folder contains following modules:<br>
 <strong>Frontend</strong><br> 
 <code>style.css</code> Describes HTML display<br> 
 <code>index.html</code> A webpage for UI<br> 
