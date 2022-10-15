@@ -38,8 +38,8 @@ reads csv file into items &rarr; <code>Counter</code> manage items &lrarr; <code
 
 
 <h2>Deployment</h2>
-We uses Heroku to deploy our project.
-
+We use Heroku to deploy our project.
+We create a Heroku account and download CLI to deploy the project
 
 <h2>Testing Instructions</h2>
 
