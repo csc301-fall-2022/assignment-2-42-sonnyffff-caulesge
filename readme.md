@@ -33,7 +33,7 @@ tax and discount for the current bill. <code>add_cart</code> and <code>remove_ca
 allow user to add and remove items by their associated id.  <code>calculate_total</code>
 returns total value for the current cart.<br>
 To sum up, store will prepare a list of items in stock (csv) &rarr; <code>read_csv.py</code> 
-reads csv file into items &rarr; <code>Counter</code> manage items &lrarr; <code>run.py</code>
+reads csv file into items &rarr; <code>Counter</code> manage items &lrarr; <code>app.py</code>
 &lrarr; <code>index.html</code> interact with users and gets commands
 
 
