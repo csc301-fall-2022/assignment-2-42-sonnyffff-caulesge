@@ -39,7 +39,7 @@ reads csv file into items &rarr; <code>Counter</code> manage items &lrarr; <code
 
 <h2>Deployment</h2>
 We use Heroku to deploy our project.
-We used Heroku CLI to link to our Github and deploy the project. Webapplink: https://checkoutsonnycaules.herokuapp.com/
+We used Heroku CLI to link to our Github and deploy the project. <br> Webapplink: https://checkoutsonnycaules.herokuapp.com/
 
 
 <h2>Testing Instructions</h2>
