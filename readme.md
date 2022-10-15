@@ -19,7 +19,7 @@ items in the shopping cart and checkout. <br>
 <code>item_list.csv</code> A csv file that contains information of items.<br>
 
 <h3>Description</h3>
-<strong>TODO Frontend </strong> <br> 
+
 index.html is the HTML frontend and style.css is its style sheet. It contains some input textbox that can input the number and quantity of a product, and buttons that can add or delete product from the cart. It also contains a button to reset the cart and a button to show the invoice.
 
 app.py initializes the counter and contains some Flask methods that handles the POST request sent from the frontend. It calls differnet backend methods based on the button that user clicked and sends data stored in the backend to the frontend.
