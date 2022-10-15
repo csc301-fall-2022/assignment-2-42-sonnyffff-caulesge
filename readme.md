@@ -2,13 +2,13 @@
 <h2>Application</h2>
 
 <h3>Modules</h3>
-<strong>Frontend</strong><br> 
+<strong>Frontend:</strong><br> 
 <code>style.css</code> Describes HTML display<br> 
 <code>index.html</code> A webpage for UI<br> 
 <code>Procfile</code> Required file for Heroku deployment. <br>
 <code>requirent.txt</code> Required file for Heroku deployment.<br>
 <code>.flaskenv</code> Required file for Flask <br>
-<strong>Backend</strong><br>
+<strong>Backend:</strong><br>
 <code>item.py</code> Class definition of <code>Item</code> that is in store.<br>
 <code>counter.py</code> Class definition of <code>Counter</code> which is responsible for managing 
 items in the shopping cart and checkout. <br>
