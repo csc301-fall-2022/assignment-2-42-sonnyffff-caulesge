@@ -20,7 +20,7 @@ items in the shopping cart and checkout. <br>
 
 <h3>Description</h3>
 
-<code>index.html</code> is the HTML frontend and style.css is its style sheet. It contains some input textbox that can input the number and quantity of a product, and buttons that can add or delete product from the cart. It also contains a button to reset the cart and a button to show the invoice.
+<code>index.html</code> is the HTML frontend and <code>style.css</code> is its style sheet. It contains some input textbox that can input the number and quantity of a product, and buttons that can add or delete product from the cart. It also contains a button to reset the cart and a button to show the invoice.
 
 <code>app.py</code> initializes the counter and contains some Flask methods that handles the POST request sent from the frontend. It calls differnet backend methods based on the button that user clicked and sends data stored in the backend to the frontend.
 
